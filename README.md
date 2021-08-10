@@ -5,6 +5,8 @@ Code credits to Michel Kana, and Prachur Bhargava, Lead Data Scientist @ Microso
 - TASK 2: is based on  BERT Fine-Tuning Tutorial with PyTorch, By Chris McCormick and Nick Ryan results, and show output on 5 samples.
 - TASK 3: is based on the blog BART for Paraphrasing with Simple Transformers, by Thilina Rajpksha. We need to reproduce the training explained in this blog. We were allowed to pick fewer datasets
 ## Task1
+### Plot of training loss
 ### Challenges faced
 1. utils_squad and utils_squad_evaluate needed to looked for on the net and needed to be brought here.
-2. Initially I took the complete dataset and decided to train on whole of it. My system crashed after 50% of the epoch due RAM being full.
+2. Initially I took the complete dataset and decided to train on whole of it. My system crashed after 50% of the epoch due RAM being full. So changed the dataset size to 20% of the original dataset.
+3. While evaluating the model, to get predictions, util_squad.write_predictions is giving error key_number 1000007200. There are 7205 samples in the validation dataset and each sample is given a unique_id starting from 1000000000. So technically I should have upto 1000007204 unique_ids. When I tried to investigate further, with a single batch (of size 16), it was found that it is trying to read key number 1000000016, whereas there are keys only upto 1000000015.  
