@@ -33,13 +33,34 @@ Here most of the column names are self explanatory while some need little explan
 Initially, learning language representions using word embeddings like Word2Vec and GloVe, changed the way we performed NLP tasks. We could capture contextual relationships among words. But there was a limit to the amount of information they could capture and this motivated the use of deeper and more complex language models, like layers of LSTMs and GRUs. Also, these models did not take context of the word into account i.e. same word, if it has different meanings in different contexts, these embedding would give the same vector even for different contexts.
 To handle this loss of valuable information, new models like **Embeddings from Language Models** (ELMo) and **Universal Language Model Fine-tuning** (ULMFiT) paved the way for transfer learning. i.e. **Transfer Learning in NLP = Pre-Training and Fine-Tuning**
 Methods of pre-training and fine-tuning, introduced by ULMFiT and ELMo were extended by **OpenAI’s GPT**replacing the LSTM-based architecture for Language Modeling with a Transformer-based architecture. These GPT-based models could be fine-tuned to multiple NLP tasks beyond document classification, such as common sense reasoning, semantic similarity, and reading comprehension. Essentially, the emphasis was on Transformer framework, which can learn complex patterns in the data by using the Attention mechanism and can train faster than an LSTM-based model.
-#### Diving into BERT
+### Diving into BERT
 With the dawn of transfer learning, solving NLP tasks became a 2-step process:
 1. the Train a language model on a large unlabelled text corpus (unsupervised or semi-supervised)
 2. Fine-tune this large model to specific NLP tasks to utilize the large repository of knowledge this model has gained (supervised)
-With that context, let’s understand how BERT takes over from here to build a model that will become a benchmark of excellence in NLP for a long time.
+#### BERT’s Architecture
+The BERT architecture builds on top of Transformer. We currently have two variants available:
 
- 
+BERT Base: 12 layers (transformer blocks), 12 attention heads, and 110 million parameters
+BERT Large: 24 layers (transformer blocks), 16 attention heads and, 340 million parameters
+![image]
+#### Text pre-processing in BERT
+BERT has a specific set of rules to represent the input text for the model. Many of these are creative design choices that make the model even better.
+![image]
+very input embedding is a combination of 3 embeddings:
+
+1. **Position Embeddings**: BERT learns and uses positional embeddings to express the position of words in a sentence. These are added to overcome the limitation of Transformer which, unlike an RNN, is not able to capture “sequence” or “order” information
+2. **Segment Embeddings**: BERT can also take sentence pairs as inputs for tasks (Question-Answering). That’s why it learns a unique embedding for the first and the second sentences to help the model distinguish between them. In the above example, all the tokens marked as EA belong to sentence A (and similarly for EB)
+3. **Token Embeddings**: These are the embeddings learned for the specific token from the WordPiece token vocabulary
+
+#### Pre-training Tasks
+BERT is pre-trained on Masked Language Modeling and Next Sentence Prediction. 
+The two images below explain well about these two task.
+![image]
+![image]
+
+So now that BERT has opened up enormous opportunities, we can take advantage of BERT’s large repository of knowledge for our NLP applications in multiple ways. Most common and powerful one is to fine-tune it on your own task and task-specific data using embeddings from BERT as embeddings for our text documents.
+
+In this section, we will learn how to use BERT’s embeddings for our NLP task. We’ll take up the concept of fine-tuning an entire BERT model in one of the future articles.
 
 #### Transfer Learning using BERT for Question Answering 
 Here BERT is used to extract high-quality language features from the SQuAD text by adding a single linear layer on top. This  linear layer has two outputs, the first for predicting the probability that the current subtoken is the start of the answer and the second output for the end position of the answer.
