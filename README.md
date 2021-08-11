@@ -56,16 +56,16 @@ Every input embedding is a combination of 3 embeddings:
 BERT is pre-trained on Masked Language Modeling and Next Sentence Prediction. 
 The two images below explain well about these two task.
 **Masked Language Modeling** </br>
-![image](https://user-images.githubusercontent.com/82941475/128996761-ea0414be-c1d9-4fe0-87d2-3d416385da2f.png)
+![image](https://user-images.githubusercontent.com/82941475/128998507-546cf4ee-f40b-4bca-96fb-e489c2d7b5d7.png)
 
 **Next Sentence Prediction** </br>
-![image]
+![image](https://user-images.githubusercontent.com/82941475/128998464-cdccff4c-c260-46fc-a845-b0bee6348442.png)
 
 So now that BERT has opened up enormous opportunities, we can take advantage of BERT’s large repository of knowledge for our NLP applications in multiple ways. Most common and powerful one is to fine-tune it on your own task and task-specific data using embeddings from BERT as embeddings for our text documents.
 
 In this section, we will learn how to use BERT’s embeddings for our NLP task. We’ll take up the concept of fine-tuning an entire BERT model in one of the future articles.
 
-#### Transfer Learning using BERT for Question Answering 
+## So TASK 1- Transfer Learning using BERT for Question Answering 
 Here BERT is used to extract high-quality language features from the SQuAD text by adding a single linear layer on top. This  linear layer has two outputs, the first for predicting the probability that the current subtoken is the start of the answer and the second output for the end position of the answer.
 
 #### Plot of training loss
