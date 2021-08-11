@@ -55,7 +55,10 @@ Every input embedding is a combination of 3 embeddings:
 #### Pre-training Tasks
 BERT is pre-trained on Masked Language Modeling and Next Sentence Prediction. 
 The two images below explain well about these two task.
-![image]
+**Masked Language Modeling** </br>
+![image](https://user-images.githubusercontent.com/82941475/128996761-ea0414be-c1d9-4fe0-87d2-3d416385da2f.png)
+
+**Next Sentence Prediction** </br>
 ![image]
 
 So now that BERT has opened up enormous opportunities, we can take advantage of BERT’s large repository of knowledge for our NLP applications in multiple ways. Most common and powerful one is to fine-tune it on your own task and task-specific data using embeddings from BERT as embeddings for our text documents.
