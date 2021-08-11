@@ -40,9 +40,9 @@ With the dawn of transfer learning, solving NLP tasks became a 2-step process:
 #### BERT’s Architecture
 The BERT architecture builds on top of Transformer. We currently have two variants available:
 
-BERT Base: 12 layers (transformer blocks), 12 attention heads, and 110 million parameters
-BERT Large: 24 layers (transformer blocks), 16 attention heads and, 340 million parameters
-![image]
+- BERT Base: 12 layers (transformer blocks), 12 attention heads, and 110 million parameters
+- BERT Large: 24 layers (transformer blocks), 16 attention heads and, 340 million parameters
+![image](https://user-images.githubusercontent.com/82941475/128996342-5c5bb7ce-167a-43eb-ae13-7f643ae88d79.png)
 #### Text pre-processing in BERT
 BERT has a specific set of rules to represent the input text for the model. Many of these are creative design choices that make the model even better.
 ![image]
