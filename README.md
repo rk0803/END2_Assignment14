@@ -21,8 +21,25 @@ Here most of the column names are self explanatory while some need little explan
 - *doc_tokens* describes the context, i.e. the text which we want our model to understand.
 - The answer is always a portion from the context starting at *start_position* and ending at *end_position*. 
 - If the question does not have any answer in the context, *is_impossible* has the value true.
-#### Little bit about BERT
-BERT is a trained Transformer Encoder stack, with twelve in the Base version, and twenty-four in the Large version. BERT was trained on Wikipedia and Book Corpus, a dataset containing +10,000 books of different genres. More architectural details are available online, and can be referred to if required.
+## BUT What is BERT?
+**BERT** is Google’s  NLP framework, and seemingly the most influential one in recent times. </br>
+**"BERT stands for Bidirectional Encoder Representations from Transformers. It is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of NLP tasks.”**
+#### Salient features:
+- BERT is a trained Transformer Encoder stack, with twelve in the Base version, and twenty-four in the Large version. 
+- BERT was trained on Wikipedia and Book Corpus, a dataset containing +10,000 books of different genres. 
+- BERT is a bidirectional model, i.e. earns information from both the left and the right side of a token’s context during the training phase. This important for meaningful understanding of the language.
+- We can fine-tune it by adding just a couple of additional output layers to create state-of-the-art models for a variety of NLP tasks.
+#### Need for a BERT like model
+Initially, learning language representions using word embeddings like Word2Vec and GloVe, changed the way we performed NLP tasks. We could capture contextual relationships among words. But there was a limit to the amount of information they could capture and this motivated the use of deeper and more complex language models, like layers of LSTMs and GRUs. Also, these models did not take context of the word into account i.e. same word, if it has different meanings in different contexts, these embedding would give the same vector even for different contexts.
+To handle this loss of valuable information, new models like **Embeddings from Language Models** (ELMo) and **Universal Language Model Fine-tuning** (ULMFiT) paved the way for transfer learning. i.e. **Transfer Learning in NLP = Pre-Training and Fine-Tuning**
+Methods of pre-training and fine-tuning, introduced by ULMFiT and ELMo were extended by **OpenAI’s GPT**replacing the LSTM-based architecture for Language Modeling with a Transformer-based architecture. These GPT-based models could be fine-tuned to multiple NLP tasks beyond document classification, such as common sense reasoning, semantic similarity, and reading comprehension. Essentially, the emphasis was on Transformer framework, which can learn complex patterns in the data by using the Attention mechanism and can train faster than an LSTM-based model.
+#### Diving into BERT
+With the dawn of transfer learning, solving NLP tasks became a 2-step process:
+1. the Train a language model on a large unlabelled text corpus (unsupervised or semi-supervised)
+2. Fine-tune this large model to specific NLP tasks to utilize the large repository of knowledge this model has gained (supervised)
+With that context, let’s understand how BERT takes over from here to build a model that will become a benchmark of excellence in NLP for a long time.
+
+ 
 
 #### Transfer Learning using BERT for Question Answering 
 Here BERT is used to extract high-quality language features from the SQuAD text by adding a single linear layer on top. This  linear layer has two outputs, the first for predicting the probability that the current subtoken is the start of the answer and the second output for the end position of the answer.
