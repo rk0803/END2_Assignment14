@@ -45,9 +45,9 @@ The BERT architecture builds on top of Transformer. We currently have two varian
 ![image](https://user-images.githubusercontent.com/82941475/128996342-5c5bb7ce-167a-43eb-ae13-7f643ae88d79.png)
 #### Text pre-processing in BERT
 BERT has a specific set of rules to represent the input text for the model. Many of these are creative design choices that make the model even better.
-![image]
-very input embedding is a combination of 3 embeddings:
+![image](https://user-images.githubusercontent.com/82941475/128996582-991fbfc3-0a24-4a4f-a897-3e7829901bdc.png)
 
+Every input embedding is a combination of 3 embeddings:
 1. **Position Embeddings**: BERT learns and uses positional embeddings to express the position of words in a sentence. These are added to overcome the limitation of Transformer which, unlike an RNN, is not able to capture “sequence” or “order” information
 2. **Segment Embeddings**: BERT can also take sentence pairs as inputs for tasks (Question-Answering). That’s why it learns a unique embedding for the first and the second sentences to help the model distinguish between them. In the above example, all the tokens marked as EA belong to sentence A (and similarly for EB)
 3. **Token Embeddings**: These are the embeddings learned for the specific token from the WordPiece token vocabulary
