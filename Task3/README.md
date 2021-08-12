@@ -34,3 +34,12 @@ The authors note that training BART with text infilling yields the most consiste
 The task we are interested in, i.e. paraphrasing, the pre-trained BART model can be fine-tuned directly using the input sequence (original phrase) and the target sequence (paraphrased sentence) as a Sequence-to-Sequence model.
 
 This also works for tasks like summarization and abstractive question answering.
+
+#### Implementation and Challenges
+Since we could use fewer datasets than mentioned in the blog, I decided to use only **Quora Question and Answer pair dataset**.
+After loading the dataset, setting the hyperparameters etc. started to train the model. Tried to do some adjustments. But I kept getting this error:
+![image](https://user-images.githubusercontent.com/82941475/129172275-f9792f0f-b4c0-4f1e-a804-1a5627185858.png)
+
+As I was not sure, why it was not able to allocate/ map 1024 bytes. It needs further investigations.
+
+
