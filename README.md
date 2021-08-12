@@ -6,6 +6,10 @@ Code credits to Michel Kana, and Prachur Bhargava, Lead Data Scientist @ Microso
 - TASK 3: is based on the blog BART for Paraphrasing with Simple Transformers, by Thilina Rajpksha. We need to reproduce the training explained in this blog. We were allowed to pick fewer datasets
 
 
-
+#### Team Members
+Ritambhra Korpal</br>
+Chaitanya Vanapamala</br>
+Pralay Ramteke</br>
+Pallavi</br>
 
 
