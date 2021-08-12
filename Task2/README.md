@@ -32,8 +32,45 @@ Padding is done with a special `[PAD]` token, which is at index 0 in the BERT vo
 
 The "Attention Mask" is simply an array of 1s and 0s indicating which tokens are padding and which aren't (seems kind of redundant, doesn't it?!). This mask tells the "Self-Attention" mechanism in BERT not to incorporate these PAD tokens into its interpretation of the sentence.
 
+### Training log snippet
+======== Epoch 3 / 4 ========
+Training...
+  Batch    40  of    241.    Elapsed: 0:00:15.
+  Batch    80  of    241.    Elapsed: 0:00:30.
+  Batch   120  of    241.    Elapsed: 0:00:45.
+  Batch   160  of    241.    Elapsed: 0:01:01.
+  Batch   200  of    241.    Elapsed: 0:01:16.
+  Batch   240  of    241.    Elapsed: 0:01:32.
 
-### Task 2 Training Log 
+  Average training loss: 0.18
+  Training epcoh took: 0:01:32
+
+Running Validation...
+  Accuracy: 0.81
+  Validation Loss: 0.60
+  Validation took: 0:00:04
+
+======== Epoch 4 / 4 ========
+Training...
+  Batch    40  of    241.    Elapsed: 0:00:15.
+  Batch    80  of    241.    Elapsed: 0:00:31.
+  Batch   120  of    241.    Elapsed: 0:00:46.
+  Batch   160  of    241.    Elapsed: 0:01:02.
+  Batch   200  of    241.    Elapsed: 0:01:17.
+  Batch   240  of    241.    Elapsed: 0:01:32.
+
+  Average training loss: 0.13
+  Training epcoh took: 0:01:33
+
+Running Validation...
+  Accuracy: 0.81
+  Validation Loss: 0.73
+  Validation took: 0:00:04
+
+Training complete!
+Total training took 0:06:12 (h:mm:ss)
+
+### Training Log 
 epoch | Training Loss	 | Valid. Loss	| Valid. Accur.	| Training Time	| Validation Time
 -----|-----------------|--------------|---------------|---------------|-----------------				
 1 |	0.51	| 0.46	| 0.81	| 0:02:38	| 0:00:06
