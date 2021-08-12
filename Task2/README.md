@@ -46,3 +46,12 @@ Accuracy on the CoLA benchmark is measured using the "Matthews correlation coeff
 ![image](https://user-images.githubusercontent.com/82941475/129001269-3b95d61e-08a0-451d-8417-d04d2067a65c.png)
 
 The final MCC score came out to be **Total MCC: 0.571**
+
+### Sample output on 5 sentences
+Sentence | Predicted Label | Actual Label
+------------|------------|---------------
+Somebody just left - guess who. |   1 | 1
+She knew French for Tom. |  0 | 0
+John is tall on several occasions. |  0 | 0
+Everyone relies on someone. It's unclear who. |  1 |  1
+They noticed the painting, but I don't know for how long. |  0 |  0
